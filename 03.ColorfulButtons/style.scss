@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  border: none;
+  font-family: sans-serif;
+}
+
+@mixin buttonStyle($bg) {
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  background: $bg;
+  font-size: 17px;
+  cursor: pointer;
+};
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  scale: 200%;
+}
+
+.btn.red {
+    @include buttonStyle(red);
+}
+.btn.blue {
+    @include buttonStyle(blue);
+}
+.btn.green {
+    @include buttonStyle(green);
+}
+.btn.purple {
+    @include buttonStyle(purple);
+}
+.btn.orange {
+    @include buttonStyle(orange);
+}

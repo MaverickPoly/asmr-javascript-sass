@@ -1,0 +1,74 @@
+// Arrays
+
+$sizes: 10px 20px 50px 40px 60px;
+$colors: red, green, blue, purple;
+$fonts: sans-serif, serif, Arial, Calibri;
+
+.selector {
+  grid-column: length($sizes);
+  grid-row: nth($sizes, 4);
+  margin-top: index($sizes, 40px);
+  background: linear-gradient(to bottom, nth($colors, 1), nth($colors, 2));
+  font-family: append($fonts, monospace);
+  flex: join($sizes, $colors);
+  color: set-nth($colors, 3, cyan);
+  content: list-separator($sizes);
+  box-shadow: list-separator($colors);
+}
+
+
+// Maps
+
+$colors: (
+        "primary": #3498db,
+        "secondary": #2ecc71,
+        "danger": #e74c3c,
+);
+$more-colors: (
+        "success": #27ae60,
+        "info": #2980b9
+);
+
+.selector {
+  @if map-has-key($colors, "danger") {
+    color: map-get($colors, "danger");
+  } @else if map-has-key($colors, "primary") {
+    color: map-get($colors, "primary");
+  }
+
+  background: linear-gradient(to top, map-values($colors));
+  $all-keys: map-keys($colors);
+  appearance: $all-keys;
+  $all-colors: map-merge($colors, $more-colors);
+  display: map-values($all-colors);
+  position: map-keys(map-remove($all-colors, "danger", "warning"));
+}
+
+
+// Strings
+
+.string {
+  padding: quote(Helvetica);
+}
+
+
+.string {
+  padding: unquote("Helvetica");
+  margin-top: str-length("Sass");
+  margin-bottom: str-slice("Hello Sass!", 4, 8);
+  content: to-upper-case("altair");
+  margin-left: to-lower-case("ALTAIR");
+  top: str-index("Sass is awesome", "awesome");
+  bottom: str-insert("Sasscool", " is ", 5);
+  left: unique-id();
+}
+
+$directions: "top", "right", "bottom", "left";
+
+@each $dir in $directions {
+  .border-#{$dir} {
+    border-#{$dir}: 1px solid #ccc;
+  }
+}
+
+

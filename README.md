@@ -71,12 +71,15 @@
 
 ---
 
-### 9. **Built in Functions**
+### 9. **Functions**
 
-* Practice different built-in functions for strings, colors and so on.
+* Practice different Sass functions, that can be useful.
 
 ---
 
-### 10. **If statements**
+### 10. **Statements**
 
-* Practice Simple if statements.
+* Practice different statements, like `if`, `while`, `for` etc.
+
+## Contributions
+If you liked the repository or the projects, I would love to see your contributions, like issues, pull requests, forking and even cloning

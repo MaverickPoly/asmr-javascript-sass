@@ -1,0 +1,65 @@
+@function math($num1, $num2, $operation) {
+  @if $operation == "add" {
+    @return $num1 + $num2;
+  } @else if $operation == "subtract" {
+    @return $num1 - $num2;
+  } @else if $operation == "multiply" {
+    @return $num1 * $num2;
+  } @else if $operation == "divide" {
+    @return $num1 / $num2;
+  } @else if $operation == "mod" {
+    @return $num1 % $num2;
+  }
+  @return 0;
+}
+
+.selector {
+  padding: math(4, 5, "add");
+  margin: math(4, 5, "subtract");
+  top: math(4, 5, "multiply");
+  left: math(4, 5, "divide ");
+  right: math(4, 5, "mod");
+}
+
+
+// Darken/Lighten Color by a percentage
+@function tint-color($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade-color($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  gap: 30px;
+
+  h2 {
+    margin-bottom: 25px;
+  }
+
+  .box {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+  }
+  .lighten {
+    background: tint-color(red, 70);
+  }
+  .darken {
+    background: shade-color(green , 70);
+  }
+}
+
+
+
+
+
+
+
